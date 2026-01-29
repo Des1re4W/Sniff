@@ -1,4 +1,3 @@
-/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +5,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* HEADER */
 .header {
     width: 100%;
     display: flex;
@@ -20,13 +18,11 @@
     backdrop-filter: blur(5px);
 }
 
-/* SHRINK HEADER ON SCROLL */
 .header.scrolled {
     height: 60px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* LOGO */
 .logo-container {
     display: flex;
     align-items: center;
@@ -40,7 +36,6 @@
     font-style: italic;
 }
 
-/* NAVIGATION */
 .nav {
     display: flex;
     gap: 2rem;
@@ -79,7 +74,6 @@
     width: 100%;
 }
 
-/* HAMBURGER MENU BUTTON */
 .menu-btn {
     display: none;
     font-size: 1.8rem;
@@ -89,18 +83,15 @@
     cursor: pointer;
 }
 
-/* ========================= */
 @media (max-width: 768px) {
     header {
         padding: 0.5rem 1rem;
         height: 4rem;
     }
-    /* Hamburger menu on the right */
     .menu-btn {
         display: block;
         position: absolute;
         right: 1rem;
-        /* right side */
         font-size: 2rem;
         background: none;
         border: none;
@@ -109,7 +100,6 @@
         z-index: 1100;
     }
 
-    /* Center logo on mobile */
     .logo-container {
         position: absolute;
         left: 4rem;
@@ -124,11 +114,9 @@
         top: 50%;
     }
 
-    /* Center nav menu vertically */
     .nav {
         position: fixed;
         top: 80px;
-        /* matches default header height */
         left: 0;
         width: 100%;
         height: calc(100vh - 80px);
@@ -151,7 +139,6 @@
         transform: translateY(0);
     }
 
-    /* Shrink header on scroll */
     .header.scrolled {
         height: 60px;
     }
@@ -161,7 +148,6 @@
         height: 40px;
     }
 
-    /* Adjust nav top when header shrinks */
     .header.scrolled+.nav {
         top: 60px;
         height: calc(100vh - 60px);

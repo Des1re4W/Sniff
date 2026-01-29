@@ -19,7 +19,6 @@
   width: 100%;
   max-width: 1200px;
   height: 450px;
-  /* taller for bigger view */
   margin-bottom: 3rem;
   border-radius: 20px;
   overflow: hidden;
@@ -146,10 +145,8 @@
 
   .home-content .cta-btn {
     margin: 1rem 0.5rem;
-    padding: 1rem 2.8rem;   /* bigger tap area */
+    padding: 1rem 2.8rem;
     font-size: 0.95rem;
-
-    /* KEEP PREMIUM STUDIO STYLE */
     background: linear-gradient(
       135deg,
       #1e1e1e,
@@ -162,7 +159,7 @@
   }
 
   .btn-group {
-    margin-top: 25rem; /* less extreme on mobile */
+    margin-top: 25rem;
   }
 
   .home {
@@ -171,8 +168,6 @@
     align-items: center;
     text-align: center;
     flex-direction: column;
-
-    /* Mobile studio image */
     background-image: url("/assets/cat.jpg");
   }
 

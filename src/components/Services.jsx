@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./css/Services.css";
 
-// Video list with titles
 const videos = [
   { src: "/assets/video1.mp4", title: "Deep Wash" },
   { src: "/assets/video2.mp4", title: "Ceramic Coating" },

@@ -3,7 +3,7 @@ import "./css/Header.css";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("services");
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
