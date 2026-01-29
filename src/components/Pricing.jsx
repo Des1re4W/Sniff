@@ -46,7 +46,7 @@ export default function Pricing() {
             <li>Full exterior wrap</li>
             <li>Premium vinyl material</li>
             <li>Paint protection</li>
-            <li>3–5 year durability</li>
+            <li>3–5 years durability</li>
           </ul>
           <button className="price-btn">View Options</button>
         </div>

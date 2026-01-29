@@ -5,8 +5,8 @@ function LocationSection() {
   return (
     <section id="location" className="location-section">
       <div className="container">
-        <h2>Our Location</h2>
-        <p>Visit us at our main office:</p>
+        <h2>Location</h2>
+        <p>For more inquiries visit us</p>
 
         {/* Map with pinned location */}
     <div className="map-container">
