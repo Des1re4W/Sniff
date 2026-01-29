@@ -9,7 +9,7 @@ function Header() {
     const sections = document.querySelectorAll("section");
 
     const handleScroll = () => {
-      let current = "services"; 
+      let current = "services";
       const scrollPos = window.scrollY + 85;
 
       sections.forEach((section) => {
@@ -32,27 +32,52 @@ function Header() {
 
   return (
     <header className="header">
-      <div className="logo-container">Sniff.</div>
+      <a
+        href="#home"
+        className="logo-container"
+        onClick={(e) => {
+          e.preventDefault();
+          const homeSection = document.querySelector("#home");
+          homeSection.scrollIntoView({ behavior: "smooth" });
+          setMenuOpen(false);
+        }}
+      >
+        Sniff.
+      </a>
 
       <nav className={`nav ${menuOpen ? "open" : ""}`}>
         <a
-          href="#services"
+          href="#"
           className={activeSection === "services" ? "active" : ""}
-          onClick={() => setMenuOpen(false)}
+          onClick={(e) => {
+            e.preventDefault(); // prevent #services in URL
+            const section = document.querySelector("#services");
+            section.scrollIntoView({ behavior: "smooth" });
+            setMenuOpen(false); // close menu if open
+          }}
         >
           Services
         </a>
         <a
-          href="#pricing"
+          href="#"
           className={activeSection === "pricing" ? "active" : ""}
-          onClick={() => setMenuOpen(false)}
+          onClick={(e) => {
+            e.preventDefault();
+            document.querySelector("#pricing").scrollIntoView({ behavior: "smooth" });
+            setMenuOpen(false);
+          }}
         >
           Pricing
         </a>
         <a
           href="#location"
           className={activeSection === "location" ? "active" : ""}
-          onClick={() => setMenuOpen(false)}
+          onClick={(e) => 
+            {
+              e.preventDefault();
+              document.querySelector("#location").scrollIntoView({ behavior: "smooth" });
+              setMenuOpen(false)}
+            }
         >
           Location
         </a>
