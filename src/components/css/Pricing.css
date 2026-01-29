@@ -1,0 +1,98 @@
+.pricing-section {
+  padding: 6rem 2rem;
+  text-align: center;
+  color: #fff;
+
+  background:
+    radial-gradient(
+      ellipse at top center,
+      rgba(255, 255, 255, 0.08),
+      rgba(0, 0, 0, 0.95) 60%
+    ),
+    linear-gradient(to bottom, #111, #000);
+}
+
+.pricing-section h2 {
+  font-size: 2.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.pricing-sub {
+  color: #aaa;
+  margin-bottom: 4rem;
+  font-size: 1.1rem;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.price-card {
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.05),
+      rgba(0, 0, 0, 0.9)
+    );
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+  transition: all 0.35s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-8px);
+}
+
+.price-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.price span {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.price-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.price-card ul li {
+  margin: 0.6rem 0;
+  color: #ccc;
+}
+
+.price-btn {
+  padding: 0.9rem 2.4rem;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #1e1e1e, #0b0b0b);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+  transition: all 0.3s ease;
+}
+
+.price-btn:hover {
+  transform: translateY(-3px);
+}
+

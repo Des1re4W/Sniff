@@ -1,0 +1,119 @@
+.services-section {
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at top center,
+            rgba(255, 255, 255, 0.08),
+            rgba(0, 0, 0, 0.9) 60%
+        ),
+        linear-gradient(
+            to bottom,
+            #111,
+            #000
+        );
+}
+
+
+.services-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    letter-spacing: 1px;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    justify-items: center;
+    align-items: start;
+}
+
+.video-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 360px;
+    padding: 0.75rem;
+    border-radius: 18px;
+    position: relative;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.04),
+            rgba(0, 0, 0, 0.8)
+        );
+
+    transition: all 0.35s ease;
+}
+
+
+.video-container:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.8);
+}
+.video-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent 20%,
+            rgba(255, 255, 255, 0.08),
+            transparent 80%
+        );
+
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.video-container:hover::before {
+    opacity: 1;
+}
+
+
+.service-video {
+    width: 100%;
+    height: 450px;
+    /* taller for desktop */
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.video-title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .service-video {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-video {
+        height: 200px;
+    }
+
+    .videos-grid {
+        gap: 1.5rem;
+    }
+}

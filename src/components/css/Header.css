@@ -1,0 +1,169 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+}
+
+/* SHRINK HEADER ON SCROLL */
+.header.scrolled {
+    height: 60px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* LOGO */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-style: italic;
+}
+
+/* NAVIGATION */
+.nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #00ffd5;
+    transition: width 0.3s ease;
+}
+
+.nav a.active {
+    color: #0ba88e;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: #0ba88e;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* HAMBURGER MENU BUTTON */
+.menu-btn {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ========================= */
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem 1rem;
+        height: 4rem;
+    }
+    /* Hamburger menu on the right */
+    .menu-btn {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        /* right side */
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    /* Center logo on mobile */
+    .logo-container {
+        position: absolute;
+        left: 4rem;
+        transform: translateX(-50%);
+        font-style: italic;
+    }
+
+    .logo {
+        width: 4.5rem;
+        height: 4.5rem;
+        margin: 0 auto;
+        top: 50%;
+    }
+
+    /* Center nav menu vertically */
+    .nav {
+        position: fixed;
+        top: 80px;
+        /* matches default header height */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    /* Shrink header on scroll */
+    .header.scrolled {
+        height: 60px;
+    }
+
+    .header.scrolled .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Adjust nav top when header shrinks */
+    .header.scrolled+.nav {
+        top: 60px;
+        height: calc(100vh - 60px);
+    }
+}
