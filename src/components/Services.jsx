@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./css/Services.css";
 
 const videos = [
-  { src: "/assets/video1.mp4", title: "Deep Wash" },
+  { src: "/assets/video1.mp4", title: "Deep Clean" },
   { src: "/assets/video2.mp4", title: "Ceramic Coating" },
   { src: "/assets/video3.mp4", title: "Vinyl Wrap" },
   { src: "/assets/video4.mp4", title: "Repaint" },

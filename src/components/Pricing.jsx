@@ -10,7 +10,7 @@ export default function Pricing() {
 
       <div className="pricing-grid">
         <div className="price-card">
-          <h3>Deep Wash</h3>
+          <h3>Deep Clean</h3>
           <p className="price">
            Starts at ₱499.00
           </p>
