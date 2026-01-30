@@ -44,16 +44,27 @@ function Header() {
       >
         Sniff.
       </a>
-
+        
       <nav className={`nav ${menuOpen ? "open" : ""}`}>
+                <a
+          href="#"
+          className={activeSection === "about" ? "active" : ""}
+          onClick={(e) => {
+            e.preventDefault();
+            document.querySelector("#about").scrollIntoView({ behavior: "smooth" });
+            setMenuOpen(false);
+          }}
+        >
+          About
+        </a>
         <a
           href="#"
           className={activeSection === "services" ? "active" : ""}
           onClick={(e) => {
-            e.preventDefault(); // prevent #services in URL
+            e.preventDefault(); 
             const section = document.querySelector("#services");
             section.scrollIntoView({ behavior: "smooth" });
-            setMenuOpen(false); // close menu if open
+            setMenuOpen(false);
           }}
         >
           Services
