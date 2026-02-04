@@ -100,6 +100,121 @@
     color: #fff;
 }
 
+.booking-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.booking-modal {
+  background: linear-gradient(180deg, #0f0f0f, #070707);
+  padding: 2.2rem;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.8),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  animation: modalFade 0.35s ease;
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.booking-modal h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1.4rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.booking-modal input,
+.booking-modal select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+.booking-modal input::placeholder {
+  color: #aaa;
+}
+
+.booking-modal input:focus,
+.booking-modal select:focus {
+  outline: none;
+  border-color: #d4af37; /* luxury gold accent */
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.25);
+}
+
+.booking-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.booking-actions .price-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.booking-actions .price-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
+}
+
+.cancel-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ccc;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .booking-modal {
+    margin: 1rem;
+    padding: 1.8rem;
+  }
+}
+
+
 @media (max-width: 1024px) {
     .service-video {
         height: 250px;
