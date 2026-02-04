@@ -16,32 +16,43 @@ export default function Pricing() {
     setService("");
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const formData = new FormData(e.target);
+  const formData = new FormData(e.target);
+  const bookingDate = formData.get("date");
 
-    const booking = {
-      name: formData.get("name"),
-      mobile: formData.get("mobile"),
-      service,
-      vehicle: formData.get("vehicle"),
-      booking_date: formData.get("date"),
-      notification: formData.get("notification") || true,
-    };
+  // Check if booking date is in the past
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // ignore time, only compare date
+  const selectedDate = new Date(bookingDate);
 
-    const { error } = await supabase
-      .from("bookings")
-      .insert([booking]);
+  if (selectedDate < today) {
+    alert("You cannot book for a past date.");
+    return; // stop form submission
+  }
 
-    if (error) {
-      console.error(error);
-      alert("Booking failed.");
-    } else {
-      alert("Booking confirmed!");
-      closeBooking();
-    }
+  const booking = {
+    name: formData.get("name"),
+    mobile: formData.get("mobile"),
+    service,
+    vehicle: formData.get("vehicle"),
+    booking_date: bookingDate,
+    notification: formData.get("notification") || true,
   };
+
+  const { error } = await supabase
+    .from("bookings")
+    .insert([booking]);
+
+  if (error) {
+    console.error(error);
+    alert("Booking failed.");
+  } else {
+    alert("Booking confirmed!");
+    closeBooking();
+  }
+};
 
 
   return (
