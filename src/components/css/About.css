@@ -1,11 +1,13 @@
 .about-section {
-  min-height: 100vh;
+  min-height: 135vh;
   padding: 6rem 2rem;
   background: linear-gradient(180deg, #0b0b0b, #111);
   color: #f5f5f5;
   display: flex;
+  flex-direction: column; 
   align-items: center;
 }
+
 
 .about-container {
   max-width: 900px;
@@ -35,4 +37,62 @@
   font-weight: 600;
   color: #2563eb;
   letter-spacing: 1px;
+}
+
+/* Stack container */
+.stack-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: 350px; /* adjust stack height */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 2rem;
+  perspective: 1000px; /* 3D effect */
+}
+
+/* Each video card */
+.stack-container .video-container.stack {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.3s ease,
+              box-shadow 0.3s ease;
+  width: 650%;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Video inside card */
+.stack-container .video-container.stack video {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 14px 14px 0 0;
+  transition: transform 0.5s ease;
+}
+
+.stack-container .video-container.stack .video-title {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.stack-container .video-container.stack:first-child:hover {
+  transform: translateY(-10px) scale(1.05) rotate(0deg);
+  filter: brightness(1);
+}
+
+.gallery-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: flex-end;
+  height: 500px; 
+  position: relative;
+  margin-top: 1rem;
 }

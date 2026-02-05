@@ -1,103 +1,101 @@
 .services-section {
-    padding: 5rem 2rem;
-    min-height: 100vh;
-    color: #fff;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+  padding: 5rem 2rem;
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 
-    background:
-        radial-gradient(
-            ellipse at top center,
-            rgba(255, 255, 255, 0.08),
-            rgba(0, 0, 0, 0.9) 60%
-        ),
-        linear-gradient(
-            to bottom,
-            #111,
-            #000
-        );
+  background:
+    radial-gradient(ellipse at top center,
+      rgba(255, 255, 255, 0.08),
+      rgba(0, 0, 0, 0.9) 60%),
+    linear-gradient(to bottom,
+      #111,
+      #000);
 }
 
 
 .services-section h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-    letter-spacing: 1px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  letter-spacing: 1px;
+}
+
+.services-section h1 {
+  margin-top: 5rem;
+  font-size: 1.8rem;
 }
 
 .videos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
-    justify-items: center;
-    align-items: start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
+  align-items: start;
 }
 
 .video-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    width: 100%;
-    max-width: 360px;
-    padding: 0.75rem;
-    border-radius: 18px;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 360px;
+  padding: 0.75rem;
+  border-radius: 18px;
+  position: relative;
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, 0.04),
-            rgba(0, 0, 0, 0.8)
-        );
+  background:
+    linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.04),
+      rgba(0, 0, 0, 0.8));
 
-    transition: all 0.35s ease;
+  transition: all 0.35s ease;
 }
 
 
 .video-container:hover {
-    transform: translateY(-6px);
-    box-shadow:
-        0 30px 60px rgba(0, 0, 0, 0.8);
+  transform: translateY(-6px);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.8);
 }
+
 .video-container::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
 
-    background:
-        linear-gradient(
-            120deg,
-            transparent 20%,
-            rgba(255, 255, 255, 0.08),
-            transparent 80%
-        );
+  background:
+    linear-gradient(120deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.08),
+      transparent 80%);
 
-    opacity: 0;
-    transition: opacity 0.35s ease;
+  opacity: 0;
+  transition: opacity 0.35s ease;
 }
 
 .video-container:hover::before {
-    opacity: 1;
+  opacity: 1;
 }
 
 
 .service-video {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 12px;
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 .video-title {
-    text-align: center;
-    font-weight: 500;
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
-    color: #fff;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  color: #fff;
 }
 
 .booking-overlay {
@@ -129,6 +127,7 @@
     opacity: 0;
     transform: translateY(20px) scale(0.96);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -162,7 +161,8 @@
 .booking-modal input:focus,
 .booking-modal select:focus {
   outline: none;
-  border-color: #d4af37; /* luxury gold accent */
+  border-color: #d4af37;
+  /* luxury gold accent */
   background: rgba(255, 255, 255, 0.06);
   box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.25);
 }
@@ -207,6 +207,133 @@
   color: #fff;
 }
 
+.extraServices {
+  text-align: center;
+  margin-top: 3rem;
+  cursor: pointer;;
+}
+
+.extras {
+  letter-spacing: 3px;
+}
+
+/* ===== Backdrop ===== */
+.extras-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 5;
+}
+
+.extras-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===== Drawer ===== */
+.extras-panel {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: #111;
+  color: #fff;
+  padding: 2.5rem 2rem 3rem;
+  border-radius: 24px 24px 0 0;
+  transform: translateY(80px);
+  opacity: 0;
+  transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 10;
+}
+
+.extras-panel.active {
+  bottom: 0;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.drag-indicator {
+  width: 50px;
+  height: 5px;
+  background: #444;
+  border-radius: 10px;
+  margin: 0 auto 1.5rem;
+}
+
+.extras-panel h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.extras-panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.extras-panel li {
+  padding: 0.6rem 0;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: staggerIn 0.4s ease forwards;
+}
+/* Horizontal scroll for drawer videos */
+.extras-videos-grid {
+  display: flex;             /* horizontal layout */
+  gap: 1rem;                 /* space between videos */
+  overflow-x: auto;          /* allow horizontal scrolling */
+  padding-bottom: 0.5rem;    /* small padding for scroll bar */
+  scroll-behavior: smooth;   /* smooth scroll when user scrolls */
+}
+
+/* Hide default scrollbar (optional) */
+.extras-videos-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* Extra styling for videos in drawer */
+.extras-panel .video-container {
+  flex: 0 0 220px;           /* width of each video card */
+  min-height: 160px;         /* keeps layout neat */
+}
+
+.extras-panel .service-video {
+  width: 100%;
+  height: 160px;             /* adjust drawer video height */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.extras-panel .video-container {
+  transform: scale(0.95);
+}
+
+.extras-panel.active .video-container {
+  animation: videoIn 0.4s ease forwards;
+}
+
+.extras-panel.active .video-container:nth-child(1) { animation-delay: 0.1s; }
+.extras-panel.active .video-container:nth-child(2) { animation-delay: 0.2s; }
+.extras-panel.active .video-container:nth-child(3) { animation-delay: 0.3s; }
+.extras-panel .service-video {
+  height: clamp(140px, 20vw, 180px); 
+}
+@keyframes videoIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(0.95);
+  }
+}
+
+
 @media (max-width: 480px) {
   .booking-modal {
     margin: 1rem;
@@ -216,17 +343,20 @@
 
 
 @media (max-width: 1024px) {
-    .service-video {
-        height: 250px;
-    }
+  .service-video {
+    height: 250px;
+  }
 }
 
 @media (max-width: 768px) {
-    .service-video {
-        height: 200px;
-    }
-
-    .videos-grid {
-        gap: 1.5rem;
-    }
+  .service-video {
+    height: 200px;
+  }
+  .services-section h1{
+    margin-top: 3rem;
+    font-size: 1.3rem;
+  }
+  .videos-grid {
+    gap: 1.5rem;
+  }
 }
